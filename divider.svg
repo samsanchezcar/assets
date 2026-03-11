@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 60" width="900" height="60">
+  <defs>
+    <linearGradient id="divBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#0d0d1a"/>
+      <stop offset="50%"  stop-color="#130820"/>
+      <stop offset="100%" stop-color="#0d0d1a"/>
+    </linearGradient>
+    <linearGradient id="divLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#A78BFA"/>
+      <stop offset="50%"  stop-color="#67E8F9"/>
+      <stop offset="70%"  stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="gpD">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gcD">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="60" fill="url(#divBg)"/>
+
+  <!-- Purple wave -->
+  <path fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-opacity="0.55"
+    d="M0,30 C75,10 150,50 225,30 S375,10 450,30 S600,50 675,30 S825,10 900,30">
+    <animate attributeName="d"
+      values="
+        M0,30 C75,10 150,50 225,30 S375,10 450,30 S600,50 675,30 S825,10 900,30;
+        M0,30 C75,50 150,10 225,30 S375,50 450,30 S600,10 675,30 S825,50 900,30;
+        M0,30 C75,10 150,50 225,30 S375,10 450,30 S600,50 675,30 S825,10 900,30"
+      dur="5s" repeatCount="indefinite" calcMode="spline"
+      keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Cyan wave (offset) -->
+  <path fill="none" stroke="#67E8F9" stroke-width="1.2" stroke-opacity="0.40"
+    d="M0,30 C75,50 150,10 225,30 S375,50 450,30 S600,10 675,30 S825,50 900,30">
+    <animate attributeName="d"
+      values="
+        M0,30 C75,50 150,10 225,30 S375,50 450,30 S600,10 675,30 S825,50 900,30;
+        M0,30 C75,10 150,50 225,30 S375,10 450,30 S600,50 675,30 S825,10 900,30;
+        M0,30 C75,50 150,10 225,30 S375,50 450,30 S600,10 675,30 S825,50 900,30"
+      dur="5s" repeatCount="indefinite" calcMode="spline"
+      keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+  </path>
+
+  <!-- Center static line -->
+  <line x1="0" y1="30" x2="900" y2="30" stroke="url(#divLine)" stroke-width="0.7" stroke-opacity="0.25"/>
+
+  <!-- Purple particles -->
+  <g filter="url(#gpD)">
+    <circle cx="150" cy="30" r="2.5" fill="#A78BFA">
+      <animate attributeName="cy"      values="30;14;30"     dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.3;0.9"  dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="30" r="3"   fill="#C4B5FD">
+      <animate attributeName="cy"      values="30;46;30"     dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1"      dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="750" cy="30" r="2.5" fill="#A78BFA">
+      <animate attributeName="cy"      values="30;14;30"     dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.3;0.9"  dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Cyan particles -->
+  <g filter="url(#gcD)">
+    <circle cx="225" cy="30" r="2.5" fill="#67E8F9">
+      <animate attributeName="cy"      values="30;46;30"     dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.3;0.9"  dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="30" r="3"   fill="#22D3EE">
+      <animate attributeName="cy"      values="30;14;30"     dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1"      dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0"   cy="30" r="2"   fill="#67E8F9">
+      <animate attributeName="cy"      values="30;14;30"     dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7"  dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="30" r="2"   fill="#67E8F9">
+      <animate attributeName="cy"      values="30;46;30"     dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7"  dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
