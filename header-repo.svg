@@ -1,183 +1,221 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 140" width="900" height="140">
   <defs>
-    <linearGradient id="bgR" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#0d0d1a"/>
-      <stop offset="50%"  stop-color="#130820"/>
-      <stop offset="100%" stop-color="#091520"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0a0a18"/>
+      <stop offset="45%"  stop-color="#110820"/>
+      <stop offset="100%" stop-color="#080f1a"/>
     </linearGradient>
-    <linearGradient id="lineR" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="energyH" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0"/>
-      <stop offset="25%"  stop-color="#A78BFA"/>
+      <stop offset="20%"  stop-color="#A78BFA" stop-opacity="0.9"/>
       <stop offset="50%"  stop-color="#67E8F9"/>
-      <stop offset="75%"  stop-color="#A78BFA"/>
+      <stop offset="80%"  stop-color="#A78BFA" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
     </linearGradient>
-    <filter id="gpR">
+    <linearGradient id="energyV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#A78BFA" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Diagonal gradient for the flowing ribbon -->
+    <linearGradient id="ribbon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0"/>
+      <stop offset="15%"  stop-color="#A78BFA" stop-opacity="0.5"/>
+      <stop offset="50%"  stop-color="#67E8F9" stop-opacity="0.7"/>
+      <stop offset="85%"  stop-color="#A78BFA" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="orbP" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbC" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#22D3EE" stop-opacity="0.50"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gP" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gC" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gRibbon" x="-5%" y="-100%" width="110%" height="300%">
       <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="gcR">
-      <feGaussianBlur stdDeviation="3.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glowR">
-      <feGaussianBlur stdDeviation="2" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="frameR"><rect width="900" height="200"/></clipPath>
+    <clipPath id="clip"><rect width="900" height="140"/></clipPath>
   </defs>
 
-  <g clip-path="url(#frameR)">
-    <rect width="900" height="200" fill="url(#bgR)"/>
+  <g clip-path="url(#clip)">
+    <rect width="900" height="140" fill="url(#bg)"/>
 
-    <!-- Grid -->
-    <g stroke="#A78BFA" stroke-opacity="0.035" stroke-width="1">
-      <line x1="0"   y1="50"  x2="900" y2="50"/>
-      <line x1="0"   y1="100" x2="900" y2="100"/>
-      <line x1="0"   y1="150" x2="900" y2="150"/>
-      <line x1="180" y1="0"   x2="180" y2="200"/>
-      <line x1="360" y1="0"   x2="360" y2="200"/>
-      <line x1="540" y1="0"   x2="540" y2="200"/>
-      <line x1="720" y1="0"   x2="720" y2="200"/>
-    </g>
+    <!-- Diagonal lines -->
+    <line x1="0"   y1="0" x2="100" y2="140" stroke="#A78BFA" stroke-width="0.5" stroke-opacity="0.07"/>
+    <line x1="900" y1="0" x2="800" y2="140" stroke="#67E8F9" stroke-width="0.5" stroke-opacity="0.07"/>
 
     <!-- Orbs -->
-    <circle cx="80"  cy="50"  r="70" fill="#7C3AED" opacity="0.10">
-      <animate attributeName="r"       values="70;85;70"       dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.10;0.16;0.10" dur="7s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="820" cy="150" r="75" fill="#7C3AED" opacity="0.09">
-      <animate attributeName="r"       values="75;90;75"       dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.09;0.14;0.09" dur="9s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="820" cy="40"  r="55" fill="#22D3EE" opacity="0.09">
-      <animate attributeName="r"       values="55;68;55"       dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.09;0.14;0.09" dur="6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="70"  cy="165" r="50" fill="#22D3EE" opacity="0.08">
-      <animate attributeName="r"       values="50;62;50"       dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.08;0.13;0.08" dur="8s" repeatCount="indefinite"/>
-    </circle>
+    <ellipse cx="72"  cy="50"  rx="110" ry="90" fill="url(#orbP)">
+      <animate attributeName="rx" values="110;132;110" dur="8s"  repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;1;0.9"   dur="8s"  repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="828" cy="95"  rx="120" ry="90" fill="url(#orbC)">
+      <animate attributeName="rx" values="120;145;120" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="10s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="825" cy="28"  rx="65"  ry="50" fill="url(#orbP)" opacity="0.40">
+      <animate attributeName="rx" values="65;80;65" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="65"  cy="118" rx="72"  ry="55" fill="url(#orbC)" opacity="0.38">
+      <animate attributeName="ry" values="55;68;55" dur="7s" repeatCount="indefinite"/>
+    </ellipse>
 
-    <!-- Purple particles -->
-    <g filter="url(#gpR)">
-      <circle cx="200" cy="25"  r="2.5" fill="#A78BFA">
-        <animate attributeName="cy"      values="25;10;25"     dur="4s"   repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.9;0.25;0.9" dur="4s"   repeatCount="indefinite"/>
+    <!-- Energy border lines -->
+    <rect x="0" y="0"   width="900" height="1.5" fill="url(#energyH)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="138" width="900" height="1.5" fill="url(#energyH)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0"   y="0" width="1.5" height="140" fill="url(#energyV)">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="898" y="0" width="1.5" height="140" fill="url(#energyV)">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- === ABSTRACT CENTER: flowing sinusoidal ribbons === -->
+    <!-- These three waves form a layered, neutral, elegant pattern -->
+    <g filter="url(#gRibbon)">
+      <!-- Ribbon 1 — purple, slow -->
+      <path fill="none" stroke="#A78BFA" stroke-width="1.2" stroke-opacity="0.45"
+        d="M0,70 C150,30 300,110 450,70 S750,30 900,70">
+        <animate attributeName="d"
+          values="
+            M0,70 C150,30 300,110 450,70 S750,30  900,70;
+            M0,70 C150,110 300,30 450,70 S750,110 900,70;
+            M0,70 C150,30 300,110 450,70 S750,30  900,70"
+          dur="7s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </path>
+      <!-- Ribbon 2 — cyan, medium speed, offset phase -->
+      <path fill="none" stroke="#67E8F9" stroke-width="1" stroke-opacity="0.35"
+        d="M0,70 C150,110 300,30 450,70 S750,110 900,70">
+        <animate attributeName="d"
+          values="
+            M0,70 C150,110 300,30  450,70 S750,110 900,70;
+            M0,70 C150,30  300,110 450,70 S750,30  900,70;
+            M0,70 C150,110 300,30  450,70 S750,110 900,70"
+          dur="7s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </path>
+      <!-- Ribbon 3 — pale purple, faster, tight amplitude — feels like interference -->
+      <path fill="none" stroke="#C4B5FD" stroke-width="0.7" stroke-opacity="0.28"
+        d="M0,70 C100,50 200,90 300,70 S500,50 600,70 S800,90 900,70">
+        <animate attributeName="d"
+          values="
+            M0,70 C100,50 200,90 300,70 S500,50 600,70 S800,90 900,70;
+            M0,70 C100,90 200,50 300,70 S500,90 600,70 S800,50 900,70;
+            M0,70 C100,50 200,90 300,70 S500,50 600,70 S800,90 900,70"
+          dur="4s" repeatCount="indefinite" calcMode="spline"
+          keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      </path>
+    </g>
+
+    <!-- Data streams — horizontal moving lines -->
+    <g stroke="#A78BFA" stroke-opacity="0.14" stroke-width="1" fill="none">
+      <line x1="-200" y1="32" x2="400" y2="32">
+        <animate attributeName="x1" values="-200;900"  dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="400;1500"  dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0;0.14;0.14;0" dur="5s" repeatCount="indefinite" keyTimes="0;0.05;0.95;1"/>
+      </line>
+      <line x1="-200" y1="108" x2="400" y2="108">
+        <animate attributeName="x1" values="-200;900"  dur="6s" begin="3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="400;1500"  dur="6s" begin="3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0;0.12;0.12;0" dur="6s" begin="3s" repeatCount="indefinite" keyTimes="0;0.05;0.95;1"/>
+      </line>
+    </g>
+    <g stroke="#67E8F9" stroke-opacity="0.10" stroke-width="0.8" fill="none">
+      <line x1="1100" y1="70" x2="500" y2="70">
+        <animate attributeName="x1" values="1100;-200" dur="7s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="500;-800"  dur="7s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0;0.10;0.10;0" dur="7s" begin="1s" repeatCount="indefinite" keyTimes="0;0.05;0.95;1"/>
+      </line>
+    </g>
+
+    <!-- Particles — purple -->
+    <g filter="url(#gP)">
+      <circle cx="185" cy="20"  r="2.5" fill="#A78BFA">
+        <animate attributeName="cy"      values="20;8;20"      dur="4.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.2;0.9"  dur="4.2s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="700" cy="175" r="2"   fill="#A78BFA">
-        <animate attributeName="cy"      values="175;160;175"  dur="5s"   repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.8;0.2;0.8"  dur="5s"   repeatCount="indefinite"/>
+      <circle cx="700" cy="125" r="2"   fill="#A78BFA">
+        <animate attributeName="cy"      values="125;112;125"  dur="5.0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.15;0.8" dur="5.0s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="450" cy="18"  r="3"   fill="#C4B5FD">
-        <animate attributeName="cy"      values="18;5;18"      dur="6s"   repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;0.3;1"      dur="6s"   repeatCount="indefinite"/>
+      <circle cx="855" cy="70"  r="2"   fill="#C4B5FD">
+        <animate attributeName="cx"      values="855;840;855"  dur="4.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.15;0.7" dur="4.7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="855" cy="100" r="2"   fill="#A78BFA">
-        <animate attributeName="cx"      values="855;840;855"  dur="4.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.7;0.2;0.7"  dur="4.5s" repeatCount="indefinite"/>
+      <circle cx="42"  cy="70"  r="2.5" fill="#C4B5FD">
+        <animate attributeName="cx"      values="42;58;42"     dur="5.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.18;0.8" dur="5.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="310" cy="130" r="2"   fill="#A78BFA">
+        <animate attributeName="cy"      values="130;118;130"  dur="4.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.12;0.7" dur="4.6s" repeatCount="indefinite"/>
       </circle>
     </g>
 
-    <!-- Cyan particles -->
-    <g filter="url(#gcR)">
-      <circle cx="340" cy="178" r="2.5" fill="#67E8F9">
-        <animate attributeName="cy"      values="178;163;178"  dur="4s"   repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.9;0.3;0.9"  dur="4s"   repeatCount="indefinite"/>
+    <!-- Particles — cyan -->
+    <g filter="url(#gC)">
+      <circle cx="330" cy="125" r="2.5" fill="#67E8F9">
+        <animate attributeName="cy"      values="125;112;125"  dur="4.0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.25;1"     dur="4.0s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="600" cy="20"  r="2"   fill="#67E8F9">
-        <animate attributeName="cy"      values="20;7;20"      dur="5.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.8;0.25;0.8" dur="5.5s" repeatCount="indefinite"/>
+      <circle cx="600" cy="14"  r="2"   fill="#67E8F9">
+        <animate attributeName="cy"      values="14;4;14"      dur="5.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.2;0.9"  dur="5.4s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="760" cy="55"  r="3"   fill="#22D3EE">
-        <animate attributeName="cy"      values="55;40;55"     dur="3.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.8;0.2;0.8"  dur="3.5s" repeatCount="indefinite"/>
+      <circle cx="755" cy="40"  r="3"   fill="#22D3EE">
+        <animate attributeName="cy"      values="40;28;40"     dur="3.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.18;0.8" dur="3.7s" repeatCount="indefinite"/>
+        <animate attributeName="r"       values="3;4.2;3"      dur="3.7s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="145" cy="145" r="2"   fill="#67E8F9">
-        <animate attributeName="cx"      values="145;160;145"  dur="5s"   repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.7;0.2;0.7"  dur="5s"   repeatCount="indefinite"/>
+      <circle cx="148" cy="25"  r="2"   fill="#67E8F9">
+        <animate attributeName="cy"      values="25;14;25"     dur="5.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.15;0.7" dur="5.1s" repeatCount="indefinite"/>
       </circle>
     </g>
 
-    <!-- Accent lines -->
-    <rect x="0" y="0"   width="900" height="2.5" fill="url(#lineR)">
-      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="0" y="197" width="900" height="2.5" fill="url(#lineR)">
-      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="1.5s" repeatCount="indefinite"/>
-    </rect>
-
-    <!-- Corner tag — top left -->
-    <rect x="12" y="10" width="120" height="20" rx="4" fill="#7C3AED" fill-opacity="0.18" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="72" y="24" font-family="'Fira Code',monospace" font-size="10" fill="#C4B5FD" text-anchor="middle">samsanchezcar</text>
-
-    <!-- Corner tag — top right -->
-    <rect x="768" y="10" width="120" height="20" rx="4" fill="#0891B2" fill-opacity="0.15" stroke="#67E8F9" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="828" y="24" font-family="'Fira Code',monospace" font-size="10" fill="#67E8F9" text-anchor="middle">UNAL · 2025</text>
-
-    <!-- Main title area — placeholder bar for repo name -->
-    <!-- Decorative bracket left -->
-    <text x="80" y="100"
-      font-family="'Fira Code',monospace"
-      font-size="42" fill="#7C3AED" fill-opacity="0.35"
-      text-anchor="middle">&lt;</text>
-
-    <!-- Decorative bracket right -->
-    <text x="820" y="100"
-      font-family="'Fira Code',monospace"
-      font-size="42" fill="#67E8F9" fill-opacity="0.35"
-      text-anchor="middle">/&gt;</text>
-
-    <!-- Pulsing dot trio — center decorative element -->
-    <circle cx="432" cy="82" r="4" fill="#A78BFA">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
-      <animate attributeName="r"       values="4;5.5;4" dur="1.5s" repeatCount="indefinite"/>
+    <!-- Expanding ring from center (same as profile header) -->
+    <circle cx="450" cy="70" r="0" fill="none" stroke="#A78BFA" stroke-width="1">
+      <animate attributeName="r"       values="0;200"  dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0" dur="5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="450" cy="82" r="4" fill="#67E8F9">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
-      <animate attributeName="r"       values="4;5.5;4" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="468" cy="82" r="4" fill="#A78BFA">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="1.0s" repeatCount="indefinite"/>
-      <animate attributeName="r"       values="4;5.5;4" dur="1.5s" begin="1.0s" repeatCount="indefinite"/>
+    <circle cx="450" cy="70" r="0" fill="none" stroke="#67E8F9" stroke-width="0.8">
+      <animate attributeName="r"       values="0;200"  dur="5s" begin="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.20;0" dur="5s" begin="2.5s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Subtitle line — repo context -->
+    <!-- Author tag top-left -->
+    <rect x="14" y="12" width="118" height="16" rx="4"
+      fill="#7C3AED" fill-opacity="0.14" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.45"/>
+    <text x="73" y="24"
+      font-family="'Fira Code',monospace" font-size="9"
+      fill="#C4B5FD" text-anchor="middle" letter-spacing="0.5">samsanchezcar / UNAL</text>
+
+    <!-- Subtitle -->
     <text x="450" y="118"
       font-family="'Fira Code','Courier New',monospace"
-      font-size="13" fill="#A78BFA" fill-opacity="0.85"
-      text-anchor="middle" letter-spacing="0.5"
-      filter="url(#glowR)">
-      Mechatronics Engineering  ·  UNAL  ·  Bogotá, Colombia
-      <animate attributeName="opacity" values="0;1" dur="1s" begin="0.4s" fill="freeze"/>
+      font-size="11" fill="#A78BFA" fill-opacity="0.80"
+      text-anchor="middle" letter-spacing="2.5">
+      MECHATRONICS  ·  ENGINEERING  ·  UNAL
+      <animate attributeName="opacity" values="0.65;0.95;0.65" dur="4s" repeatCount="indefinite"/>
     </text>
-
-    <!-- Tech chips row -->
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.6s" fill="freeze"/>
-      <rect x="233" y="140" width="80" height="22" rx="11" fill="#7C3AED" fill-opacity="0.22" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.6"/>
-      <text x="273" y="155" font-family="'Fira Code',monospace" font-size="10" fill="#C4B5FD" text-anchor="middle">🤖 Robotics</text>
-    </g>
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.8s" fill="freeze"/>
-      <rect x="323" y="140" width="88" height="22" rx="11" fill="#0891B2" fill-opacity="0.18" stroke="#67E8F9" stroke-width="1" stroke-opacity="0.6"/>
-      <text x="367" y="155" font-family="'Fira Code',monospace" font-size="10" fill="#67E8F9" text-anchor="middle">🖥️ Embedded</text>
-    </g>
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.0s" fill="freeze"/>
-      <rect x="421" y="140" width="72" height="22" rx="11" fill="#7C3AED" fill-opacity="0.22" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.6"/>
-      <text x="457" y="155" font-family="'Fira Code',monospace" font-size="10" fill="#C4B5FD" text-anchor="middle">📐 CAD</text>
-    </g>
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.2s" fill="freeze"/>
-      <rect x="503" y="140" width="72" height="22" rx="11" fill="#0891B2" fill-opacity="0.18" stroke="#67E8F9" stroke-width="1" stroke-opacity="0.6"/>
-      <text x="539" y="155" font-family="'Fira Code',monospace" font-size="10" fill="#67E8F9" text-anchor="middle">🧠 AI/RL</text>
-    </g>
-    <g opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.4s" fill="freeze"/>
-      <rect x="585" y="140" width="82" height="22" rx="11" fill="#7C3AED" fill-opacity="0.22" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.6"/>
-      <text x="626" y="155" font-family="'Fira Code',monospace" font-size="10" fill="#C4B5FD" text-anchor="middle">⚙️ Control</text>
-    </g>
+    <line x1="290" y1="124" x2="610" y2="124"
+      stroke="url(#energyH)" stroke-width="0.7" stroke-opacity="0.4"/>
 
   </g>
 </svg>
