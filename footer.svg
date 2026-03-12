@@ -30,7 +30,7 @@
   <g clip-path="url(#ftClip)">
     <rect width="900" height="160" fill="url(#ftBg)"/>
 
-    <!-- Faint grid -->
+    <!-- Grid -->
     <g stroke="#A78BFA" stroke-opacity="0.03" stroke-width="1">
       <line x1="0"   y1="53"  x2="900" y2="53"/>
       <line x1="0"   y1="106" x2="900" y2="106"/>
@@ -46,59 +46,58 @@
 
     <!-- Orbs -->
     <circle cx="90"  cy="130" r="75" fill="#7C3AED" opacity="0.10">
-      <animate attributeName="r"       values="75;90;75"       dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.10;0.16;0.10" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="r"       values="75;90;75"        dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.10;0.16;0.10"  dur="7s" repeatCount="indefinite"/>
     </circle>
     <circle cx="810" cy="40"  r="65" fill="#22D3EE" opacity="0.09">
-      <animate attributeName="r"       values="65;80;65"       dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.09;0.14;0.09" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="r"       values="65;80;65"        dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.09;0.14;0.09"  dur="6s" repeatCount="indefinite"/>
     </circle>
 
     <!-- Purple particles -->
     <g filter="url(#gpFt)">
       <circle cx="180" cy="140" r="2.5" fill="#A78BFA">
-        <animate attributeName="cy"      values="140;122;140"  dur="4.3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.9;0.25;0.9" dur="4.3s" repeatCount="indefinite"/>
+        <animate attributeName="cy"      values="140;122;140"   dur="4.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.25;0.9"  dur="4.3s" repeatCount="indefinite"/>
       </circle>
       <circle cx="720" cy="20"  r="2"   fill="#C4B5FD">
-        <animate attributeName="cy"      values="20;6;20"      dur="5.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.8;0.2;0.8"  dur="5.2s" repeatCount="indefinite"/>
+        <animate attributeName="cy"      values="20;6;20"       dur="5.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8"   dur="5.2s" repeatCount="indefinite"/>
       </circle>
       <circle cx="450" cy="145" r="3"   fill="#A78BFA">
-        <animate attributeName="cy"      values="145;128;145"  dur="5.7s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;0.3;1"      dur="5.7s" repeatCount="indefinite"/>
+        <animate attributeName="cy"      values="145;128;145"   dur="5.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.3;1"       dur="5.7s" repeatCount="indefinite"/>
       </circle>
     </g>
 
     <!-- Cyan particles -->
     <g filter="url(#gcFt)">
       <circle cx="320" cy="18"  r="2.5" fill="#67E8F9">
-        <animate attributeName="cy"      values="18;4;18"      dur="4.1s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.9;0.25;0.9" dur="4.1s" repeatCount="indefinite"/>
+        <animate attributeName="cy"      values="18;4;18"       dur="4.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.25;0.9"  dur="4.1s" repeatCount="indefinite"/>
       </circle>
       <circle cx="600" cy="148" r="2"   fill="#67E8F9">
-        <animate attributeName="cy"      values="148;132;148"  dur="5.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.8;0.2;0.8"  dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy"      values="148;132;148"   dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8"   dur="5.5s" repeatCount="indefinite"/>
       </circle>
       <circle cx="840" cy="100" r="2.5" fill="#22D3EE">
-        <animate attributeName="cx"      values="840;824;840"  dur="4.8s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.7;0.2;0.7"  dur="4.8s" repeatCount="indefinite"/>
+        <animate attributeName="cx"      values="840;824;840"   dur="4.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.2;0.7"   dur="4.8s" repeatCount="indefinite"/>
       </circle>
     </g>
 
-    <!-- Quote line 1 (purple) -->
+    <!-- Quote line 1 — purple -->
     <text x="450" y="56"
       font-family="'Fira Code','Courier New',monospace"
-      font-size="13.5" fill="#A78BFA" fill-opacity="0.90"
+      font-size="13" fill="#A78BFA" fill-opacity="0.90"
       text-anchor="middle" letter-spacing="0.3"
       filter="url(#glowTxt)">
       💡 "Innovation is born from the passion to learn...
     </text>
-
-    <!-- Quote line 2 (cyan) -->
-    <text x="450" y="78"
+    <!-- Quote line 2 — cyan -->
+    <text x="450" y="76"
       font-family="'Fira Code','Courier New',monospace"
-      font-size="13.5" fill="#67E8F9" fill-opacity="0.85"
+      font-size="13" fill="#67E8F9" fill-opacity="0.85"
       text-anchor="middle" letter-spacing="0.3">
       ...and the desire to improve the world, one project at a time."
     </text>
@@ -109,12 +108,12 @@
     <circle cx="470" cy="96" r="2" fill="#A78BFA" opacity="0.5"/>
 
     <!-- Made by badge -->
-    <rect x="330" y="110" width="240" height="28" rx="6" fill="#0d0d1a" stroke="#7C3AED" stroke-width="1.2"/>
-    <text x="450" y="128"
+    <rect x="315" y="110" width="270" height="30" rx="6" fill="#0d0d1a" stroke="#7C3AED" stroke-width="1.2"/>
+    <text x="450" y="130"
       font-family="'Fira Code',monospace"
-      font-size="11.5" fill="#C4B5FD"
+      font-size="12" fill="#C4B5FD"
       text-anchor="middle">
-      ❤️  Made by Samuel David  ·  UNAL
+      ❤️  Made by Samuel David  ·  UNAL  ·  2025
     </text>
   </g>
 </svg>
